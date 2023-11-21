@@ -25,7 +25,13 @@ class settingsController extends Controller
 {
     //
     public function RegPompform(){
-        return view('pages.pump');
+        $fetched_farms=farm::join('users','farm.UserID','=','users.id')
+        ->get([
+            'farm.id as FarmID',
+            'farm.*',
+            'users.*'
+                ]);
+        return view('pages.station.pumpFarmList', compact('fetched_farms'));
     }
     public function RegIrrigationform(){
         $new_farm= new farm();
@@ -71,17 +77,6 @@ class settingsController extends Controller
             'farm.*',
             'users.*'
                 ]);
-        // $fetched_farms=DB::table('farm')
-        // ->join('users','farm.UserID','=','users.id')
-        // ->join('chah', 'farm.id','=','chah.farmID')
-        // ->groupBy('farm.id')
-        // ->get([
-        //     'farm.id as FarmID',
-        //     'farm.*',
-        //     'users.*',
-        //     'chah.*'
-        // ]);
-        // dd($fetched_farms);
         return view('pages.waterResources', compact('fetched_farms'));
 
     }

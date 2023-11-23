@@ -119,6 +119,34 @@
                         }
 
                 });
+
+                $(document).on('click', '.add_disel_pump', function(){
+                        var id2=$(this).attr("data-id");
+                        console.log({
+                                        id_farm:id2,
+                                        _token:_token
+                                        });
+                        if(id2 != '' )
+                        {
+
+                            if(!confirm("Would you like to define Disel pump for this Station")) {
+                                return false;
+                            }
+                            try
+                            {
+                                url_change_content="{{route('viewDieselPump', 'id_farm')}}";
+                                url_change_content = url_change_content.replace('id_farm', id2);
+                                location.href = url_change_content; 
+                            }
+                            catch (e) {
+                                $('#message').html("<div class='alert alert-danger'>در دریافت و ارسال به پایگاه  خطای روی داده است.</div>");
+                            }
+                        }// end if check empty box
+                        else {
+                            $('#message').html("<div class='alert alert-danger'>پیام مدیر نباید خالی باشد</div>");
+                        }
+
+                });
           </script>
           
 @endsection

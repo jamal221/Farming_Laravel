@@ -73,6 +73,18 @@
                   <p>Water Resources:</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{route('Fertilizeform')}}" 
+                @if(app('request')->route()->uri=="Fertilizeform")
+                  class="nav-link active"
+                @else
+                  class="nav-link"
+                @endif
+                >
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Fertilizers/Nutrients:</p>
+                </a>
+              </li>
             </ul>
           </li>
         </ul>

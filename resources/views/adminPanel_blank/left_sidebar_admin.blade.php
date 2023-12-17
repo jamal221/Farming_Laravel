@@ -85,6 +85,18 @@
                   <p>Fertilizers/Nutrients:</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{route('waterAnalyze')}}" 
+                @if(app('request')->route()->uri=="waterAnalyze")
+                  class="nav-link active"
+                @else
+                  class="nav-link"
+                @endif
+                >
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Water Analyze:</p>
+                </a>
+              </li>
             </ul>
           </li>
         </ul>

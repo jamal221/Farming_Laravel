@@ -554,4 +554,6 @@ class settingsController extends Controller
             echo '<div class="alert alert-warning">There is an warning during update this Channel</div>';
         } 
     }
+
+    
 }

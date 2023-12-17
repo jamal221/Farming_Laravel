@@ -6,6 +6,7 @@ use App\Http\Controllers\unitController;
 use App\Http\Controllers\settingsController;
 use App\Http\Controllers\stationPumpcontroller;
 use App\Http\Controllers\FertilizeController;
+use App\Http\Controllers\waterAnalyzeController;
 
 
 
@@ -79,6 +80,33 @@ Route::post('RegFertilizersCount', [FertilizeController::class, 'RegFertilizersC
 Route::get('viewDefineFertilizePage/{id_farm}',[FertilizeController::class, 'viewDefineFertilizePage'])->name('viewDefineFertilizePage');
 Route::post('RegFertilizer', [FertilizeController::class, 'RegFertilizer'])->name('RegFertilizer');
 Route::post('EditFertilizeUnit',[FertilizeController::class, 'EditFertilizeUnit'])->name('EditFertilizeUnit');
+
+// Water Analyze
+Route::get('waterAnalyze',[waterAnalyzeController::class, 'waterAnalyze'])->name('waterAnalyze');
+Route::get('viewPitsForAnalyze/{id_farm}', [waterAnalyzeController::class, 'viewPitsForAnalyze'])->name('viewPitsForAnalyze');
+Route::post('RegAnalyzeWaterPits',[waterAnalyzeController::class, 'RegAnalyzeWaterPits'])->name('RegAnalyzeWaterPits');
+Route::get('viewRiverForAnalyze/{id_farm}', [waterAnalyzeController::class, 'viewRiverForAnalyze'])->name('viewRiverForAnalyze');
+Route::post('RegAnalyzeWaterRivers',[waterAnalyzeController::class, 'RegAnalyzeWaterRivers'])->name('RegAnalyzeWaterRivers');
+Route::get('viewNetPipeForAnalyze/{id_farm}', [waterAnalyzeController::class, 'viewNetPipeForAnalyze'])->name('viewNetPipeForAnalyze');
+Route::post('RegAnalyzeWaterNetPipes',[waterAnalyzeController::class, 'RegAnalyzeWaterNetPipes'])->name('RegAnalyzeWaterNetPipes');
+Route::get('viewChannelForAnalyze/{id_farm}', [waterAnalyzeController::class, 'viewChannelForAnalyze'])->name('viewChannelForAnalyze');
+Route::post('RegAnalyzeWaterChannels',[waterAnalyzeController::class, 'RegAnalyzeWaterChannels'])->name('RegAnalyzeWaterChannels');
+Route::get('viewPoolForAnalyze/{id_farm}', [waterAnalyzeController::class, 'viewPoolForAnalyze'])->name('viewPoolForAnalyze');
+Route::post('RegAnalyzeWaterPools',[waterAnalyzeController::class, 'RegAnalyzeWaterPools'])->name('RegAnalyzeWaterPools');
+Route::get('viewTankForAnalyze/{id_farm}', [waterAnalyzeController::class, 'viewTankForAnalyze'])->name('viewTankForAnalyze');
+Route::post('RegAnalyzeWaterTanks',[waterAnalyzeController::class, 'RegAnalyzeWaterTanks'])->name('RegAnalyzeWaterTanks');
+Route::post('AnalyzedPitsData',[waterAnalyzeController::class, 'AnalyzedPitsData'])->name('AnalyzedPitsData');
+Route::post('AnalyzedPoolsData',[waterAnalyzeController::class, 'AnalyzedPoolsData'])->name('AnalyzedPoolsData');
+Route::post('AnalyzedRiversData',[waterAnalyzeController::class, 'AnalyzedRiversData'])->name('AnalyzedRiversData');
+Route::post('AnalyzedChannelsData',[waterAnalyzeController::class, 'AnalyzedChannelsData'])->name('AnalyzedChannelsData');
+Route::post('AnalyzedNetPipesData',[waterAnalyzeController::class, 'AnalyzedNetPipesData'])->name('AnalyzedNetPipesData');
+Route::post('AnalyzedTanksData',[waterAnalyzeController::class, 'AnalyzedTanksData'])->name('AnalyzedTanksData');
+
+
+
+
+
+
 
 
 
